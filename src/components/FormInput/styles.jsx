@@ -4,10 +4,12 @@ export const Container = styled.div`
   margin-left: 2rem;
   width: 470px;
   background: linear-gradient(
-    0deg,
-    rgba(111, 111, 111, 1) 0%,
-    rgba(148, 148, 148, 1) 100%
+    180deg,
+    rgba(105, 105, 105, 1) 11%,
+    rgba(121, 121, 121, 1) 35%,
+    rgba(160, 160, 160, 1) 69%
   );
+
   border-radius: 8px;
   padding: 25px 30px;
 `;
