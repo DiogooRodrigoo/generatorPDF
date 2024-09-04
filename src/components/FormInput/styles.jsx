@@ -1,48 +1,91 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  margin-left: 2rem;
   width: 470px;
-  background-color: #fff;
+  background: linear-gradient(
+    0deg,
+    rgba(111, 111, 111, 1) 0%,
+    rgba(148, 148, 148, 1) 100%
+  );
   border-radius: 8px;
   padding: 25px 30px;
 `;
 
-export const Title = styled.h1`
-  color: #2899d6;
-  font-size: 32px;
-  font-weight: 300;
-  text-align: center;
+export const InputTitle = styled.input`
+  width: 100%;
+  height: 30px;
+  margin: 5px 0 15px 0;
+  font-size: 1rem;
+  font-weight: 320;
+  padding: 15px;
+  border-radius: 5px;
+  border-color: #434141;
+
+  outline: none;
+  resize: none;
 `;
 
 export const TextArea = styled.textarea`
   width: 100%;
   height: 59px;
-  font-weight: 300;
-  font-size: 16px;
+  font-weight: 320;
+  font-size: 1rem;
   padding: 15px;
-  margin-top: 26px;
+  margin-top: 5px;
   margin-bottom: 15px;
   border-radius: 5px;
-  border-color: #1a679f;
+  border-color: #434141;
   outline: none;
   resize: none;
 `;
 
-export const LabelImage = styled.label`
-  font-size: 16px;
-  font-weight: 500;
-  color: #1a679f;
+export const LabelInputs = styled.h2`
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 300;
 `;
 
 export const InputImage = styled.input`
+  margin-top: 10px;
+  background-color: #434141;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+`;
+
+export const ViewPDF = styled.div`
   margin-top: 15px;
-  margin-bottom: 25px;
+  align-items: center;
+  justify-content: center;
 `;
 
-export const DownloadPDF = styled.button`
-  width: 100%;
-  height: 2rem;
-  background-color: #2899d62a;
+export const LabelViewPDF = styled.h1`
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-align: center;
 `;
 
-// #ACC545 #5A952F  #2899D6 #1A679F
+export const DownloadButton = styled.button`
+  margin-top: 15px;
+  margin-left: 25%;
+  width: 50%;
+  background-color: #434141;
+  padding: 10px 45px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+`;
+
+export const DownloadLabelButton = styled.p`
+  color: #fff;
+  font-weight: 500;
+`;

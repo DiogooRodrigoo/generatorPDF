@@ -1,10 +1,10 @@
 import "@/app/global.css";
-import FormInput from "@/components/FormInput/FormInput";
+import HomePage from "@/screens/home/HomePage";
 
 export default function Home() {
   return (
     <div className="container">
-      <FormInput />
+      <HomePage />
     </div>
   );
 }
