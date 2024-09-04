@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { pdf, PDFDownloadLink } from "@react-pdf/renderer";
 
 import * as C from "./styles";
 
 import PdfDocument from "@/components/PdfDocument/PdfDocument";
+import uploadPDF from "@/data/api/uploadPDF";
 
 function FormInput() {
   const [title, setTitle] = useState();
@@ -33,6 +34,14 @@ function FormInput() {
 
     const url = URL.createObjectURL(blob);
     setPdfUrl(url);
+
+    // MOCK SIMULANDO ENVIO PARA API
+    try {
+      const result = await uploadPDF(blob);
+      console.log("PDF enviado com sucesso:", result);
+    } catch (error) {
+      console.error("Erro ao enviar PDF:", error);
+    }
   };
   return (
     <C.Container>
