@@ -72,7 +72,7 @@ export const LabelViewPDF = styled.h1`
   text-align: center;
 `;
 
-export const DownloadButton = styled.button`
+export const ButtonPDF = styled.button`
   margin-top: 15px;
   margin-left: 25%;
   width: 50%;
@@ -87,7 +87,7 @@ export const DownloadButton = styled.button`
   }
 `;
 
-export const DownloadLabelButton = styled.p`
+export const LabelButtonPDF = styled.p`
   color: #fff;
   font-weight: 500;
 `;

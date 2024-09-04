@@ -21,9 +21,9 @@ function CoreContent() {
         <C.ItemList>
           <strong>Gerar PDFs Profissionais:</strong> Transforme seu conteúdo em
           PDFs com qualidade profissional usando nossa integração com a
-          biblioteca @react-pdf/renderer. Cada PDF gerado inclui um cabeçalho
-          consistente e imagens em páginas separadas, garantindo uma
-          apresentação clara e organizada.
+          biblioteca <strong>@react-pdf/renderer</strong>. Cada PDF gerado
+          inclui um cabeçalho consistente e imagens em páginas separadas,
+          garantindo uma apresentação clara e organizada.
         </C.ItemList>
         <C.ItemList>
           <strong>Visualizar e Baixar:</strong> Antes de finalizar, veja uma

@@ -26,19 +26,14 @@ function FormInput() {
     }
   };
 
-  useEffect(() => {
-    const generatePDF = async () => {
-      const blob = await pdf(
-        <PdfDocument text={text} image={image} />
-      ).toBlob();
+  const generatePDF = async () => {
+    const blob = await pdf(
+      <PdfDocument title={title} text={text} image={image} />
+    ).toBlob();
 
-      const url = URL.createObjectURL(blob);
-      setPdfUrl(url);
-    };
-
-    generatePDF();
-  }, [text, image]);
-
+    const url = URL.createObjectURL(blob);
+    setPdfUrl(url);
+  };
   return (
     <C.Container>
       <C.LabelInputs>Título das páginas</C.LabelInputs>
@@ -59,28 +54,35 @@ function FormInput() {
       <C.LabelInputs>Escolha uma imagem para adiconar ao seu PDF</C.LabelInputs>
       <C.InputImage type="file" accept="image/*" onChange={handleImageChange} />
 
+      <C.ButtonPDF onClick={generatePDF}>
+        <C.LabelButtonPDF>Gerar PDF</C.LabelButtonPDF>
+      </C.ButtonPDF>
+
       {pdfUrl && (
         <C.ViewPDF>
           <C.LabelViewPDF>Visualização do PDF</C.LabelViewPDF>
-          <iframe src={pdfUrl} style={{ width: "100%", height: "100%" }} />
+          <iframe src={pdfUrl} style={{ width: "100%", height: "500px" }} />
         </C.ViewPDF>
       )}
 
-      <C.DownloadButton>
+      <C.ButtonPDF>
         <PDFDownloadLink
           document={
-            <PdfDocument text={text} image={image} fileName="document.pdf" />
+            <PdfDocument
+              title={title}
+              text={text}
+              image={image}
+              fileName="document.pdf"
+            />
           }
         >
           {({ loading }) => (
-            <C.DownloadLabelButton>
+            <C.LabelButtonPDF>
               {loading ? "Gerando PDF..." : "Baixar PDF"}
-            </C.DownloadLabelButton>
+            </C.LabelButtonPDF>
           )}
         </PDFDownloadLink>
-      </C.DownloadButton>
-
-      <PdfDocument />
+      </C.ButtonPDF>
     </C.Container>
   );
 }

@@ -3,13 +3,29 @@ import { Page, Text, Image, Document, View } from "@react-pdf/renderer";
 
 import { styles } from "./styles";
 
-const PdfDocument = ({ text, image }) => (
+const PdfDocument = ({ title, text, image }) => (
   <Document>
-    <Page style={styles.page}>
-      <Text style={styles.text}>{text}</Text>
+    {text && (
+      <Page size="A4" style={styles.page}>
+        <View style={styles.header}>
+          <Text>{title}</Text>
+        </View>
+        <View style={styles.content}>
+          <Text style={styles.text}>{text}</Text>
+        </View>
+      </Page>
+    )}
 
-      {image && <Image style={styles.image} src={image} />}
-    </Page>
+    {image && (
+      <Page size="A4" style={styles.page}>
+        <View style={styles.header}>
+          <Text>{title}</Text>
+        </View>
+        <View style={styles.imagePage}>
+          <Image style={styles.image} src={image} />
+        </View>
+      </Page>
+    )}
   </Document>
 );
 

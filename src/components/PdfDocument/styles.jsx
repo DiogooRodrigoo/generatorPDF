@@ -6,14 +6,16 @@ export const styles = StyleSheet.create({
     padding: 20,
   },
   header: {
-    position: "fixed",
-    left: 0,
-    top: 0,
-    right: 0,
-    backgroundColor: "#f2f2f2",
-    padding: 10,
-    borderBottom: "1px solid #ccc",
     textAlign: "center",
+    fontSize: 24,
+    fontWeight: 300,
+    marginBottom: 10,
+    backgroundColor: "#f4f4f4",
+    top: 0,
+    left: 0,
+    width: "100%",
+    zIndex: 1,
+    padding: 10,
   },
   content: {
     margin: 30,
@@ -29,7 +31,7 @@ export const styles = StyleSheet.create({
     height: "auto",
   },
   text: {
-    fontSize: 12,
+    fontSize: 18,
     textAlign: "justify",
   },
 });
