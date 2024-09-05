@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { pdf, PDFDownloadLink } from "@react-pdf/renderer";
 
 import * as C from "./styles";
@@ -43,6 +43,12 @@ function FormInput() {
       console.error("Erro ao enviar PDF:", error);
     }
   };
+
+  const memoizedPdfDocument = useMemo(
+    () => <PdfDocument title={title} text={text} image={image} />,
+    [title, text, image]
+  );
+
   return (
     <C.Container>
       <C.LabelInputs>Título das páginas</C.LabelInputs>
@@ -68,30 +74,26 @@ function FormInput() {
       </C.ButtonPDF>
 
       {pdfUrl && (
-        <C.ViewPDF>
-          <C.LabelViewPDF>Visualização do PDF</C.LabelViewPDF>
-          <iframe src={pdfUrl} style={{ width: "100%", height: "500px" }} />
-        </C.ViewPDF>
-      )}
+        <>
+          <C.ViewPDF>
+            <C.LabelViewPDF>Visualização do PDF</C.LabelViewPDF>
+            <iframe src={pdfUrl} style={{ width: "100%", height: "500px" }} />
+          </C.ViewPDF>
 
-      <C.ButtonPDF>
-        <PDFDownloadLink
-          document={
-            <PdfDocument
-              title={title}
-              text={text}
-              image={image}
+          <C.ButtonPDF>
+            <PDFDownloadLink
+              document={memoizedPdfDocument}
               fileName="document.pdf"
-            />
-          }
-        >
-          {({ loading }) => (
-            <C.LabelButtonPDF>
-              {loading ? "Gerando PDF..." : "Baixar PDF"}
-            </C.LabelButtonPDF>
-          )}
-        </PDFDownloadLink>
-      </C.ButtonPDF>
+            >
+              {({ loading }) => (
+                <C.LabelButtonPDF>
+                  {loading ? "Gerando PDF..." : "Baixar PDF"}
+                </C.LabelButtonPDF>
+              )}
+            </PDFDownloadLink>
+          </C.ButtonPDF>
+        </>
+      )}
     </C.Container>
   );
 }
