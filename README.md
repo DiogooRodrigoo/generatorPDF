@@ -1,6 +1,6 @@
 ## Visão
 
-O **DocuGeni** é ferramenta intuitiva e poderos que permite o usuario fazer que transforma suas ideias e imagens em documentos PDF de Maneira rápida e eficiente. Desenvolvida como parte de um teste técnico para a GeoGIS, com o objetivo de avaliar conhecimentos em React.JS.
+O **DocuGeni** é ferramenta intuitiva e poderos que permite o usuario transforma suas ideias e imagens em documentos PDF de Maneira rápida e eficiente. Desenvolvida como parte de um teste técnico para a GeoGIS, com o objetivo de avaliar conhecimentos em React.JS.
 
 ## Tecnologias Utilizadas
 
