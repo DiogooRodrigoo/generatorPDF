@@ -33,5 +33,13 @@ export const styles = StyleSheet.create({
   text: {
     fontSize: 18,
     textAlign: "justify",
+    fontFamily: "Space Mono",
+  },
+  textHeader: {
+    fontSize: 20,
+    textAlign: "justify",
+    fontWeight: 300,
+    textTransform: "uppercase",
+    textAlign: "center",
   },
 });
