@@ -3,12 +3,6 @@ import { Page, Text, Image, Document, View, Font } from "@react-pdf/renderer";
 
 import { styles } from "./styles";
 
-import Space_Mono from "@/assets/fonts/Space_Mono/SpaceMono-Regular.ttf";
-
-Font.register({
-  family: "Space Mono",
-  src: Space_Mono,
-});
 
 const PdfDocument = ({ title, text, image }) => (
   <Document>
